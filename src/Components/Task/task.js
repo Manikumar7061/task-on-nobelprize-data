@@ -11,8 +11,7 @@ export default function DataGridFormat() {
       try {
         let storedArr = [];
         let moreNobel = [];
-        let res = await axios.get("http://api.nobelprize.org/v1/prize.json"
-        );
+        let res = await axios.get("http://api.nobelprize.org/v1/prize.json");
 
         let data = res.data.prizes;
         console.log("data fetched is::==", res, data);
@@ -94,20 +93,21 @@ export default function DataGridFormat() {
     },
   ];
 
-  return (<>
-  <h1> List of the Nobel Prize Winners </h1>
-    <div style={{ height: 400, width: "100%" }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={pageSize}
-        onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-        rowsPerPageOptions={[5, 10, 20]}
-        pagination
-        {...rows}
-        disableColumnSelector
-      />
-    </div>
+  return (
+    <>
+      <h1> List of the Nobel Prize Winners </h1>
+      <div style={{ height: 400, width: "100%" }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSize={pageSize}
+          onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+          rowsPerPageOptions={[5, 10, 20]}
+          pagination
+          {...rows}
+          disableColumnSelector
+        />
+      </div>
     </>
   );
 }
