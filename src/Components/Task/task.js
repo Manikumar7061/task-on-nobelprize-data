@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { getRequest } from "../../Services/httpService";
+import axios from "axios";
 
 export default function DataGridFormat() {
   const [pageSize, setPageSize] = useState(5);
@@ -11,10 +11,8 @@ export default function DataGridFormat() {
       try {
         let storedArr = [];
         let moreNobel = [];
-        let res = await getRequest({
-          baseURL: "http://api.nobelprize.org",
-          url: "/v1/prize.json",
-        });
+        let res = await axios.get("http://api.nobelprize.org/v1/prize.json"
+        );
 
         let data = res.data.prizes;
         console.log("data fetched is::==", res, data);

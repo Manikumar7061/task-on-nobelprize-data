@@ -1,8 +1,9 @@
 # Demo
 
-In the header will had the sorting and filter for year and category
+In the header of the table, added the sorting and filter for year and category
 
 Used MUI library for building the table
+
 ## Available Scripts
 
 In the project directory, you can run:
