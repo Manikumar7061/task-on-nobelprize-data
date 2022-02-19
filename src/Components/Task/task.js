@@ -11,7 +11,7 @@ export default function DataGridFormat() {
       try {
         let storedArr = [];
         let moreNobel = [];
-        let res = await axios.get("http://api.nobelprize.org/v1/prize.json");
+        let res = await axios.get("https://api.nobelprize.org/v1/prize.json");
 
         let data = res.data.prizes;
         console.log("data fetched is::==", res, data);
